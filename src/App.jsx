@@ -37,9 +37,8 @@ function App() {
           {showContent && (
             <div className="opacity-0 animate-fade-in-slow">
               <p className="text-xl text-gray-700 leading-relaxed max-w-8xl">
-                I'm a 3rd year Honours Computer Science and Mathematics student at McGill University.
-                I'm obsessed with being the best software engineer I can be and I try to improve everyday. My passions include Compilers,
-                Machine Learning, and Mathematics.
+                Welcome to my website! I'm a 3rd year Honours Mathematics and Computer Science student at McGill University.
+                My passions include Compilers, Machine Learning, and Mathematics.
               </p>
             </div>
           )}
@@ -58,7 +57,7 @@ function App() {
                     <span className="font-semibold">Undergraduate Researcher</span> @ 
                     <span className="underline decoration-2 underline-offset-2 ml-1 font-semibold">McGill University</span>
                   </div>
-                  <div className="absolute left-0 right-0 bottom-0 border-b border-gray-400" style={{width: '150%'}}></div>
+                    <div className="absolute left-0 right-0 bottom-0 border-b border-black" style={{width: '150%'}}></div>
                 </div>
                 <div className="pb-6">
                   <div className="text-sm text-gray-600 mb-1">may 2025 - jul 2025</div>
@@ -81,21 +80,21 @@ function App() {
               <div className="grid md:grid-cols-2 gap-x-32 gap-y-8 max-w-7xl mx-auto">
                 {/* Project Card List - 6 only, colored numbers, clickable, black text */}
                 {[
-                  { color: 'bg-blue-500', num: '01', title: 'Ad Astra' },
-                  { color: 'bg-purple-600', num: '02', title: 'Tax Management App' },
-                  { color: 'bg-green-500', num: '03', title: 'Code Review CLI' },
-                  { color: 'bg-red-500', num: '04', title: 'Portfolio Website' },
-                  { color: 'bg-yellow-500', num: '05', title: 'ETCA-GCC' },
-                  { color: 'bg-indigo-500', num: '06', title: 'OS Simulation' },
+                  { color: 'bg-blue-800', num: '01', title: 'Ad Astra' },
+                  { color: 'bg-purple-800', num: '02', title: 'Tax Management App' },
+                  { color: 'bg-emerald-700', num: '03', title: 'Code Review CLI' },
+                  { color: 'bg-red-700', num: '04', title: 'Portfolio Website' },
+                  { color: 'bg-amber-600', num: '05', title: 'ETCA-GCC' },
+                  { color: 'bg-indigo-800', num: '06', title: 'OS Simulation' },
                 ].map((proj, i) => (
                   <a
                     key={proj.num}
                     href="#"
-                    className="block border-b border-gray-400 pb-6 focus:outline-none"
+                    className="block border-b border-black pb-6 focus:outline-none"
                     tabIndex={0}
                   >
                     <div className="flex items-center gap-4">
-                      <div className={`w-12 h-12 ${proj.color} rounded-lg flex items-center justify-center`}>
+                      <div className={`w-12 h-12 ${proj.color} flex items-center justify-center`}>
                         <span className="text-white text-sm font-bold">{proj.num}</span>
                       </div>
                       <div>
@@ -118,11 +117,11 @@ function App() {
                 <div>
                   <h3 className="text-xl font-semibold mb-6 text-gray-800">Languages</h3>
                   <div className="space-y-3">
-                    <div className="border-b border-gray-300 pb-2">C/C++</div>
-                    <div className="border-b border-gray-300 pb-2">Python</div>
-                    <div className="border-b border-gray-300 pb-2">Java</div>
-                    <div className="border-b border-gray-300 pb-2">JavaScript</div>
-                    <div className="border-b border-gray-300 pb-2">TypeScript</div>
+                    <div className="border-b border-black pb-2">C/C++</div>
+                    <div className="border-b border-black pb-2">Python</div>
+                    <div className="border-b border-black pb-2">Java</div>
+                    <div className="border-b border-black pb-2">JavaScript</div>
+                    <div className="border-b border-black pb-2">TypeScript</div>
                     <div className="pb-2">HTML/CSS</div>
                   </div>
                 </div>
@@ -130,21 +129,20 @@ function App() {
                 <div>
                   <h3 className="text-xl font-semibold mb-6 text-gray-800">Frameworks</h3>
                   <div className="space-y-3">
-                    <div className="border-b border-gray-300 pb-2">React</div>
-                    <div className="border-b border-gray-300 pb-2">Next.js</div>
-                    <div className="border-b border-gray-300 pb-2">Node.js</div>
-                    <div className="border-b border-gray-300 pb-2">NestJS</div>
-                    <div className="border-b border-gray-300 pb-2">Express</div>
-                    <div className="border-b border-gray-300 pb-2">FastAPI</div>
-                    <div className="border-b border-gray-300 pb-2">scikit-learn</div>
-                    <div className="pb-2">Tailwind CSS</div>
+                    <div className="border-b border-black pb-2">React</div>
+                    <div className="border-b border-black pb-2">Next.js</div>
+                    <div className="border-b border-black pb-2">Node.js</div>
+                    <div className="border-b border-black pb-2">NestJS</div>
+                    <div className="border-b border-black pb-2">Express</div>
+                    <div className="border-b border-black pb-2">FastAPI</div>
+                    <div className="pb-2">scikit-learn</div>
                   </div>
                 </div>
 
                 <div>
                   <h3 className="text-xl font-semibold mb-6 text-gray-800">Databases</h3>
                   <div className="space-y-3">
-                    <div className="border-b border-gray-300 pb-2">PostgreSQL</div>
+                    <div className="border-b border-black pb-2">PostgreSQL</div>
                     <div className="pb-2">Redis</div>
                   </div>
                 </div>
@@ -152,10 +150,10 @@ function App() {
                 <div>
                   <h3 className="text-xl font-semibold mb-6 text-gray-800">Tools</h3>
                   <div className="space-y-3">
-                    <div className="border-b border-gray-300 pb-2">Git</div>
-                    <div className="border-b border-gray-300 pb-2">Docker</div>
-                    <div className="border-b border-gray-300 pb-2">AWS</div>
-                    <div className="border-b border-gray-300 pb-2">GitHub Actions</div>
+                    <div className="border-b border-black pb-2">Git</div>
+                    <div className="border-b border-black pb-2">Docker</div>
+                    <div className="border-b border-black pb-2">AWS</div>
+                    <div className="border-b border-black pb-2">GitHub Actions</div>
                     <div className="pb-2">Tableau</div>
                   </div>
                 </div>
@@ -171,30 +169,15 @@ function App() {
                 <div className="relative pb-4">
                   <span>Email: </span>
                   <a href="mailto:shivam.patel@mail.mcgill.ca" className="hover:underline">shivam.patel@mail.mcgill.ca</a>
-                  <div className="absolute left-0 right-0 bottom-0 border-b border-gray-400" style={{width: '150%'}}></div>
+              <div className="absolute left-0 right-0 bottom-0 border-b border-black" style={{width: '150%'}}></div>
                 </div>
                 <div className="relative pb-4">
                   <a href="#" className="hover:underline">LinkedIn</a>
-                  <div className="absolute left-0 right-0 bottom-0 border-b border-gray-400" style={{width: '150%'}}></div>
+              <div className="absolute left-0 right-0 bottom-0 border-b border-black" style={{width: '150%'}}></div>
                 </div>
                 <div className="relative pb-4">
-                  <a href="#" className="hover:underline">GitHub</a>
-                  <div className="absolute left-0 right-0 bottom-0 border-b border-gray-400" style={{width: '150%'}}></div>
-                </div>
-                <div className="relative pb-4">
-                  <a href="#" className="hover:underline">Twitter</a>
-                  <div className="absolute left-0 right-0 bottom-0 border-b border-gray-400" style={{width: '150%'}}></div>
-                </div>
-                <div className="relative pb-4">
-                  <a href="#" className="hover:underline">Instagram</a>
-                  <div className="absolute left-0 right-0 bottom-0 border-b border-gray-400" style={{width: '150%'}}></div>
-                </div>
-                <div className="relative pb-4">
-                  <a href="#" className="hover:underline">Dribbble</a>
-                  <div className="absolute left-0 right-0 bottom-0 border-b border-gray-400" style={{width: '150%'}}></div>
-                </div>
-                <div className="pb-4">
-                  <a href="#" className="hover:underline">CodePen</a>
+                  <a href="https://github.com/notsplol" className="hover:underline">GitHub</a>
+              <div className="absolute left-0 right-0 bottom-0 border-b border-black" style={{width: '150%'}}></div>
                 </div>
               </div>
 
