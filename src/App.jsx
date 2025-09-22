@@ -4,8 +4,16 @@ function App() {
   const [currentText, setCurrentText] = useState('')
   const [showContent, setShowContent] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isEnglish, setIsEnglish] = useState(true)
 
-  const fullText = "Hey, I'm Shivam"
+  const fullText = isEnglish ? "Hey, I'm Shivam" : "Hey, je suis Shivam"
+
+  useEffect(() => {
+    // Reset animation when language changes
+    setCurrentText('')
+    setCurrentIndex(0)
+    setShowContent(false)
+  }, [isEnglish])
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -27,6 +35,18 @@ function App() {
     <div className="min-h-screen bg-stone-100 text-gray-900" style={{ fontFamily: 'ZalandoSansExpanded-Regular, Avenir, sans-serif' }}>
       <div className="max-w-5xl mx-auto px-8 py-16">
         
+        {/* Language Toggle Button */}
+        {currentIndex >= fullText.length && (
+          <div className="absolute top-16 right-8 opacity-0 animate-fade-in-slow" style={{animationDelay: '0.5s'}}>
+            <button 
+              onClick={() => setIsEnglish(!isEnglish)}
+              className="text-gray-900 text-sm font-semibold hover:scale-110 transition-transform duration-200 language-toggle"
+            >
+              {isEnglish ? 'FR' : 'EN'}
+            </button>
+          </div>
+        )}
+        
         {/* Hero Section */}
         <div className="mb-20">
           <div className="flex items-center gap-6 mb-14">
@@ -45,9 +65,19 @@ function App() {
           {showContent && (
             <div className="opacity-0 animate-fade-in-slow">
               <p className="text-xl text-gray-700 leading-relaxed">
-                Welcome to my website! I'm a 3rd year Honours Mathematics and Computer Science student at McGill University. I've made scalable software for businesses, worked with large established codebases and aim to get better everyday.
-                My passions include compilers, machine learning, and functional programming. Outside of coding, I enjoy swing trading stocks (unsuccessfully), 
-                learning mathematics, and biking.
+                {isEnglish ? (
+                  <>
+                    Welcome to my website! I'm a 3rd year Honours Mathematics and Computer Science student at McGill University. I've made scalable software for businesses, worked with large established codebases and aim to get better everyday.
+                    My passions include compilers, machine learning, and functional programming. Outside of coding, I enjoy swing trading stocks (unsuccessfully), 
+                    learning mathematics, and biking.
+                  </>
+                ) : (
+                  <>
+                    Bienvenue sur mon site web ! Je suis étudiant en Mathématiques et Informatique à l'Université McGill. J'ai développé des logiciels évolutifs pour des entreprises, travaillé avec de grandes bases de code établies et je vise à m'améliorer chaque jour.
+                    Mes passions incluent les compilateurs, l'apprentissage automatique et la programmation fonctionnelle. En dehors du codage, j'aime le swing trading d'actions (sans succès), 
+                    apprendre les mathématiques et faire du vélo.
+                  </>
+                )}
               </p>
             </div>
           )}
@@ -58,20 +88,22 @@ function App() {
             
             {/* Experience Section */}
             <section>
-              <h2 className="text-4xl md:text-5xl font-bold mb-12 text-black" style={{ fontFamily: 'ZalandoSansExpanded-SemiBold, Avenir, sans-serif' }}>Experience</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-12 text-black" style={{ fontFamily: 'ZalandoSansExpanded-SemiBold, Avenir, sans-serif' }}>
+                {isEnglish ? 'Experience' : 'Expérience'}
+              </h2>
               <div className="space-y-8">
                 <div className="relative pb-6">
                   <div className="text-sm text-gray-600 mb-1">aug 2025 - now</div>
                   <div className="text-lg">
-                    <span className="font-semibold">Undergraduate Researcher</span> @
-                    <span className="underline decoration-2 underline-offset-2 ml-1 font-semibold">McGill University</span>
+                    <span className="font-semibold">{isEnglish ? 'Undergraduate Researcher' : 'Chercheur'}</span> @
+                    <span className="underline decoration-2 underline-offset-2 ml-1 font-semibold">{isEnglish ? 'McGill University' : 'Université McGill'}</span>
                   </div>
                     <div className="absolute left-0 right-0 bottom-0 border-b border-black" style={{width: '150%'}}></div>
                 </div>
                 <div className="pb-6">
                   <div className="text-sm text-gray-600 mb-1">may 2025 - jul 2025</div>
                   <div className="text-lg">
-                    <span className="font-semibold">Software Developer Intern</span> @
+                    <span className="font-semibold">{isEnglish ? 'Software Developer Intern' : 'Stagiaire Développeur Logiciel'}</span> @
                     <span className="underline decoration-2 underline-offset-2 ml-1 font-semibold">Patel Tax Services</span>
                   </div>
                 </div>
@@ -80,10 +112,14 @@ function App() {
 
             {/* Projects Section */}
             <section>
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black" style={{ fontFamily: 'ZalandoSansExpanded-SemiBold, Avenir, sans-serif' }}>Projects</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black" style={{ fontFamily: 'ZalandoSansExpanded-SemiBold, Avenir, sans-serif' }}>
+                {isEnglish ? 'Projects' : 'Projets'}
+              </h2>
               <p className="text-gray-700 mb-12 max-w-7xl">
-                Some of my recent projects which include React, Node.js, Python, Typescript, C 
-                and various modern web technologies. All links go to my GitHub.
+                {isEnglish 
+                  ? 'Some of my recent projects which include React, Node.js, Python, Typescript, C and various modern web technologies. All links go to my GitHub.'
+                  : 'Quelques-uns de mes projets récents qui incluent React, Node.js, Python, Typescript, C et diverses technologies web modernes. Tous les liens mènent à mon GitHub.'
+                }
               </p>
               
               <div className="grid md:grid-cols-2 gap-x-32 gap-y-8 max-w-7xl mx-auto">
@@ -123,12 +159,14 @@ function App() {
 
             {/* Tech Stack Section */}
             <section>
-              <h2 className="text-4xl md:text-5xl font-bold mb-12 text-black" style={{ fontFamily: 'ZalandoSansExpanded-SemiBold, Avenir, sans-serif' }}>Tech Stack</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-12 text-black" style={{ fontFamily: 'ZalandoSansExpanded-SemiBold, Avenir, sans-serif' }}>
+                {isEnglish ? 'Tech Stack' : 'Technologies'}
+              </h2>
               
               <div className="grid md:grid-cols-4 gap-12">
                 
                 <div>
-                  <h3 className="text-xl font-semibold mb-6 text-gray-800">Languages</h3>
+                  <h3 className="text-xl font-semibold mb-6 text-gray-800">{isEnglish ? 'Languages' : 'Langages'}</h3>
                   <div className="space-y-3">
                     <div className="border-b border-black pb-2">C/C++</div>
                     <div className="border-b border-black pb-2">Python</div>
@@ -140,7 +178,7 @@ function App() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-6 text-gray-800">Frameworks</h3>
+                  <h3 className="text-xl font-semibold mb-6 text-gray-800">{isEnglish ? 'Frameworks' : 'Frameworks'}</h3>
                   <div className="space-y-3">
                     <div className="border-b border-black pb-2">React</div>
                     <div className="border-b border-black pb-2">Next.js</div>
@@ -153,7 +191,7 @@ function App() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-6 text-gray-800">Databases</h3>
+                  <h3 className="text-xl font-semibold mb-6 text-gray-800">{isEnglish ? 'Databases' : 'Databases'}</h3>
                   <div className="space-y-3">
                     <div className="border-b border-black pb-2">PostgreSQL</div>
                     <div className="pb-2">Redis</div>
@@ -161,7 +199,7 @@ function App() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold mb-6 text-gray-800">Tools</h3>
+                  <h3 className="text-xl font-semibold mb-6 text-gray-800">{isEnglish ? 'Tools' : 'Outils'}</h3>
                   <div className="space-y-3">
                     <div className="border-b border-black pb-2">Git</div>
                     <div className="border-b border-black pb-2">Docker</div>
@@ -176,11 +214,13 @@ function App() {
 
             {/* Contacts Section */}
             <section>
-              <h2 className="text-4xl md:text-5xl font-bold mb-12 text-black" style={{ fontFamily: 'ZalandoSansExpanded-SemiBold, Avenir, sans-serif' }}>Contacts</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-12 text-black" style={{ fontFamily: 'ZalandoSansExpanded-SemiBold, Avenir, sans-serif' }}>
+                {isEnglish ? 'Contacts' : 'Contacts'}
+              </h2>
               
               <div className="space-y-6">
                 <div className="relative pb-4">
-                  <a href="mailto:shivam.patel@mail.mcgill.ca" className="contact-link"> <span className="contact-text">Email: shivam.patel@mail.mcgill.ca</span></a>
+                  <a href="mailto:shivam.patel@mail.mcgill.ca" className="contact-link"> <span className="contact-text">{isEnglish ? 'Email: ' : 'Courriel: '}shivam.patel@mail.mcgill.ca</span></a>
               <div className="absolute left-0 right-0 bottom-0 border-b border-black" style={{width: '150%'}}></div>
                 </div>
                 <div className="relative pb-4">
@@ -309,6 +349,41 @@ function App() {
           display: inline-block;
           transform-origin: 70% 70%;
           animation: hand-wave 2s ease-in-out infinite;
+        }
+        /* Language toggle animation */
+        .language-toggle {
+          position: relative;
+          cursor: pointer;
+          -webkit-tap-highlight-color: transparent;
+        }
+        .language-toggle::after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 1px;
+          bottom: -2px;
+          left: 50%;
+          background-color: currentColor;
+          transition: width 0.3s ease-out, left 0.3s ease-out;
+        }
+        .language-toggle:hover::after {
+          width: 100%;
+          left: 0;
+        }
+        /* Remove outline/visual jump on mouse click while preserving keyboard focus */
+        .language-toggle:focus {
+          outline: none;
+          box-shadow: none;
+        }
+        .language-toggle:focus-visible {
+          /* subtle focus ring for keyboard users */
+          outline: 2px solid rgba(0,0,0,0.12);
+          outline-offset: 3px;
+        }
+        /* Disable click/active animation (no scale/underline jump on mouse down) */
+        .language-toggle:active {
+          transform: none !important;
+          transition: none !important;
         }
       `}</style>
     </div>
