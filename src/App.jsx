@@ -37,7 +37,7 @@ function App() {
         
         {/* Language Toggle Button */}
         {currentIndex >= fullText.length && (
-          <div className="absolute top-16 right-8 opacity-0 animate-fade-in-slow" style={{animationDelay: '0.5s'}}>
+          <div className="absolute top-16 right-14 opacity-0 animate-fade-in-slow" style={{animationDelay: '0.5s'}}>
             <button 
               onClick={() => setIsEnglish(!isEnglish)}
               className="text-gray-900 text-sm font-semibold hover:scale-110 transition-transform duration-200 language-toggle"
@@ -214,26 +214,26 @@ function App() {
 
             {/* Contacts Section */}
             <section>
-              <h2 className="text-4xl md:text-5xl font-bold mb-12 text-black" style={{ fontFamily: 'ZalandoSansExpanded-SemiBold, Avenir, sans-serif' }}>
+              <h2 className="text-4xl md:text-5xl font-bold mb-10 text-black" style={{ fontFamily: 'ZalandoSansExpanded-SemiBold, Avenir, sans-serif' }}>
                 {isEnglish ? 'Contacts' : 'Contacts'}
               </h2>
               
-              <div className="space-y-6">
-                <div className="relative pb-4">
+              <div className="space-y-2">
+                <div className="relative pb-2">
                   <a href="mailto:shivam.patel@mail.mcgill.ca" className="contact-link"> <span className="contact-text">{isEnglish ? 'Email: ' : 'Courriel: '}shivam.patel@mail.mcgill.ca</span></a>
               <div className="absolute left-0 right-0 bottom-0 border-b border-black" style={{width: '150%'}}></div>
                 </div>
-                <div className="relative pb-4">
+                <div className="relative pb-2">
                   <a href="#" className="contact-link"><span className="contact-text">LinkedIn</span></a>
               <div className="absolute left-0 right-0 bottom-0 border-b border-black" style={{width: '150%'}}></div>
                 </div>
-                <div className="relative pb-4">
+                <div className="relative pb-2">
                   <a href="https://github.com/notsplol" className="contact-link"><span className="contact-text">GitHub</span></a>
               <div className="absolute left-0 right-0 bottom-0 border-b border-black" style={{width: '150%'}}></div>
                 </div>
               </div>
 
-              <div className="mt-12 text-gray-700">
+              <div className="mt-16 text-gray-700">
                 Sayonara <span className="wave" role="img" aria-label="waving-hand">👋</span>
               </div>
             </section>
