@@ -218,7 +218,7 @@ function App() {
                 {isEnglish ? 'Contacts' : 'Contacts'}
               </h2>
               
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <div className="relative pb-2">
                   <a href="mailto:shivam.patel@mail.mcgill.ca" className="contact-link"> <span className="contact-text">{isEnglish ? 'Email: ' : 'Courriel: '}shivam.patel@mail.mcgill.ca</span></a>
               <div className="absolute left-0 right-0 bottom-0 border-b border-black" style={{width: '150%'}}></div>
