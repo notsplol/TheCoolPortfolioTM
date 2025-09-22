@@ -29,15 +29,24 @@ function App() {
         
         {/* Hero Section */}
         <div className="mb-20">
-          <h1 className="text-5xl md:text-7xl font-bold mb-14 text-black" style={{ fontFamily: 'ZalandoSansExpanded-Bold, Avenir, sans-serif' }}>
-            <span>{currentText}</span>
-            <span className="inline-block bg-black w-1 animate-blink">&nbsp;</span>
-          </h1>
+          <div className="flex items-center gap-6 mb-14">
+            <h1 className="text-5xl md:text-7xl font-bold text-black" style={{ fontFamily: 'ZalandoSansExpanded-Bold, Avenir, sans-serif' }}>
+              <span>{currentText}</span>
+              <span className="inline-block bg-black w-1 animate-blink">&nbsp;</span>
+            </h1>
+            {/* emoji ppears after typing completes */}
+            {currentIndex >= fullText.length && (
+              <div className="dance-container opacity-0 animate-fade-in-slow" style={{animationDelay: '0.05s'}}>
+                <span className="dance" role="img" aria-label="dancing">🧿</span>
+              </div>
+            )}
+          </div>
           
           {showContent && (
             <div className="opacity-0 animate-fade-in-slow">
               <p className="text-xl text-gray-700 leading-relaxed max-w-full">
                 Welcome to my website! I'm a 3rd year Honours Mathematics and Computer Science student at McGill University.
+                I've made scalable software for businesses, worked with large established codebases and aim to get better everyday.
                 My passions include Compilers, Machine Learning, and Mathematics.
               </p>
             </div>
@@ -167,16 +176,15 @@ function App() {
               
               <div className="space-y-6">
                 <div className="relative pb-4">
-                  <span>Email: </span>
-                  <a href="mailto:shivam.patel@mail.mcgill.ca" className="hover:underline">shivam.patel@mail.mcgill.ca</a>
+                  <a href="mailto:shivam.patel@mail.mcgill.ca" className="contact-link"> <span className="contact-text">Email: shivam.patel@mail.mcgill.ca</span></a>
               <div className="absolute left-0 right-0 bottom-0 border-b border-black" style={{width: '150%'}}></div>
                 </div>
                 <div className="relative pb-4">
-                  <a href="#" className="hover:underline">LinkedIn</a>
+                  <a href="#" className="contact-link"><span className="contact-text">LinkedIn</span></a>
               <div className="absolute left-0 right-0 bottom-0 border-b border-black" style={{width: '150%'}}></div>
                 </div>
                 <div className="relative pb-4">
-                  <a href="https://github.com/notsplol" className="hover:underline">GitHub</a>
+                  <a href="https://github.com/notsplol" className="contact-link"><span className="contact-text">GitHub</span></a>
               <div className="absolute left-0 right-0 bottom-0 border-b border-black" style={{width: '150%'}}></div>
                 </div>
               </div>
@@ -211,6 +219,55 @@ function App() {
         }
         .animate-fade-in-slow {
           animation: fade-in-slow 1.2s ease-out forwards;
+        }
+        /* Dancing emoji animation */
+        @keyframes dance-bounce {
+          0% { transform: translateY(0) rotate(0deg); }
+          25% { transform: translateY(-6px) rotate(-8deg); }
+          50% { transform: translateY(0) rotate(0deg); }
+          75% { transform: translateY(-4px) rotate(8deg); }
+          100% { transform: translateY(0) rotate(0deg); }
+        }
+        .dance {
+          display: inline-block;
+          font-size: 1.4rem;
+          transform-origin: 50% 70%;
+          animation: dance-bounce 1.6s ease-in-out infinite;
+          will-change: transform;
+        }
+        .dance-container { line-height: 0; }
+        /* Contacts hover overlay */
+        .contact-link {
+          position: relative;
+          display: inline-block;
+          padding: 0.125rem 0.25rem;
+          overflow: hidden;
+          color: inherit;
+          text-decoration: none;
+        }
+        .contact-link::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 0;
+          background: #000;
+          z-index: 0;
+          transition: width 250ms cubic-bezier(.2,.8,.2,1);
+        }
+        .contact-link:hover::before,
+        .contact-link:focus::before {
+          width: 100%;
+        }
+        .contact-text {
+          position: relative;
+          z-index: 1;
+          transition: color 200ms ease;
+        }
+        .contact-link:hover .contact-text,
+        .contact-link:focus .contact-text {
+          color: #fff;
         }
       `}</style>
     </div>
