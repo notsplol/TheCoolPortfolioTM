@@ -36,7 +36,7 @@ function App() {
           
           {showContent && (
             <div className="opacity-0 animate-fade-in-slow">
-              <p className="text-xl text-gray-700 leading-relaxed max-w-8xl">
+              <p className="text-xl text-gray-700 leading-relaxed max-w-full">
                 Welcome to my website! I'm a 3rd year Honours Mathematics and Computer Science student at McGill University.
                 My passions include Compilers, Machine Learning, and Mathematics.
               </p>
