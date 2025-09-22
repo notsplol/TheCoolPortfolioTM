@@ -63,7 +63,7 @@ function App() {
                 <div className="relative pb-6">
                   <div className="text-sm text-gray-600 mb-1">aug 2025 - now</div>
                   <div className="text-lg">
-                    <span className="font-semibold">Undergraduate Researcher</span> @ 
+                    <span className="font-semibold">Undergraduate Researcher</span> @
                     <span className="underline decoration-2 underline-offset-2 ml-1 font-semibold">McGill University</span>
                   </div>
                     <div className="absolute left-0 right-0 bottom-0 border-b border-black" style={{width: '150%'}}></div>
