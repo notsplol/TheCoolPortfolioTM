@@ -18,7 +18,7 @@ function App() {
           setShowContent(true)
         }, 500)
       }
-    }, 100)
+    }, 150)
 
     return () => clearTimeout(timer)
   }, [currentIndex, fullText, showContent])
@@ -78,7 +78,7 @@ function App() {
               </p>
               
               <div className="grid md:grid-cols-2 gap-x-32 gap-y-8 max-w-7xl mx-auto">
-                {/* Project Card List - 6 only, colored numbers, clickable, black text */}
+                {/* Project List*/}
                 {[
                   { color: 'bg-blue-800', num: '01', title: 'Ad Astra' },
                   { color: 'bg-purple-800', num: '02', title: 'Tax Management App' },
