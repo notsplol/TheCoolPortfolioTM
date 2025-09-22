@@ -6,7 +6,7 @@ function App() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isEnglish, setIsEnglish] = useState(true)
 
-  const fullText = isEnglish ? "Hey, I'm Shivam" : "Hey, je suis Shivam"
+  const fullText = isEnglish ? "Hey, I'm Shivam" : "Salut, Shivam ici"
 
   useEffect(() => {
     // Reset animation when language changes
@@ -56,12 +56,12 @@ function App() {
             </h1>
             {/* emoji appears after typing completes */}
             {currentIndex >= fullText.length && (
-              <div className="dance-container opacity-0 animate-fade-in-slow" style={{animationDelay: '0.05s'}}>
-                <span className="dance" role="img" aria-label="dancing">🧿</span>
+              <div className="dance-container opacity-0 animate-fade-in-slow" style={{animationDelay: '0.9s'}}>
+                <span className="dance" role="img" aria-label="dancing">(◍•ᴗ•◍)</span>
               </div>
             )}
           </div>
-          
+
           {showContent && (
             <div className="opacity-0 animate-fade-in-slow">
               <p className="text-xl text-gray-700 leading-relaxed">
@@ -224,11 +224,11 @@ function App() {
               <div className="absolute left-0 right-0 bottom-0 border-b border-black" style={{width: '150%'}}></div>
                 </div>
                 <div className="relative pb-2">
-                  <a href="#" className="contact-link"><span className="contact-text">LinkedIn</span></a>
+                  <a href="https://github.com/notsplol" className="contact-link"><span className="contact-text">GitHub</span></a>
               <div className="absolute left-0 right-0 bottom-0 border-b border-black" style={{width: '150%'}}></div>
                 </div>
                 <div className="relative pb-2">
-                  <a href="https://github.com/notsplol" className="contact-link"><span className="contact-text">GitHub</span></a>
+                  <a href="https://www.linkedin.com/in/shivam-patel-244217353" className="contact-link"><span className="contact-text">LinkedIn</span></a>
               <div className="absolute left-0 right-0 bottom-0 border-b border-black" style={{width: '150%'}}></div>
                 </div>
               </div>
@@ -276,7 +276,7 @@ function App() {
           display: inline-block;
           font-size: 1.4rem;
           transform-origin: 50% 70%;
-          animation: dance-bounce 1.6s ease-in-out infinite;
+          animation: dance-bounce 2s ease-in-out infinite;
           will-change: transform;
         }
         .dance-container { line-height: 0; }
