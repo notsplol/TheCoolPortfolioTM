@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-stone-100 text-gray-900" style={{ fontFamily: 'ZalandoSansExpanded-Regular, Avenir, sans-serif' }}>
-      <div className="max-w-4xl mx-auto px-8 py-16">
+      <div className="max-w-5xl mx-auto px-8 py-16">
         
         {/* Hero Section */}
         <div className="mb-20">
@@ -34,7 +34,7 @@ function App() {
               <span>{currentText}</span>
               <span className="inline-block bg-black w-1 animate-blink">&nbsp;</span>
             </h1>
-            {/* emoji ppears after typing completes */}
+            {/* emoji appears after typing completes */}
             {currentIndex >= fullText.length && (
               <div className="dance-container opacity-0 animate-fade-in-slow" style={{animationDelay: '0.05s'}}>
                 <span className="dance" role="img" aria-label="dancing">🧿</span>
@@ -44,17 +44,17 @@ function App() {
           
           {showContent && (
             <div className="opacity-0 animate-fade-in-slow">
-              <p className="text-xl text-gray-700 leading-relaxed max-w-full">
-                Welcome to my website! I'm a 3rd year Honours Mathematics and Computer Science student at McGill University.
-                I've made scalable software for businesses, worked with large established codebases and aim to get better everyday.
-                My passions include Compilers, Machine Learning, and Mathematics.
+              <p className="text-xl text-gray-700 leading-relaxed">
+                Welcome to my website! I'm a 3rd year Honours Mathematics and Computer Science student at McGill University. I've made scalable software for businesses, worked with large established codebases and aim to get better everyday.
+                My passions include compilers, machine learning, and functional programming. Outside of coding, I enjoy swing trading stocks (unsuccessfully), 
+                learning mathematics, and biking.
               </p>
             </div>
           )}
         </div>
 
         {showContent && (
-          <div className="space-y-20 opacity-0 animate-fade-in-slow" style={{animationDelay: '0.3s'}}>
+          <div className="space-y-20 opacity-0 animate-fade-in-slow max-w-4xl" style={{animationDelay: '0.3s'}}>
             
             {/* Experience Section */}
             <section>
@@ -82,7 +82,7 @@ function App() {
             <section>
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black" style={{ fontFamily: 'ZalandoSansExpanded-SemiBold, Avenir, sans-serif' }}>Projects</h2>
               <p className="text-gray-700 mb-12 max-w-7xl">
-                Some of my recent projects which include React, Node.js, Python, Typescript 
+                Some of my recent projects which include React, Node.js, Python, Typescript, C 
                 and various modern web technologies. All links go to my GitHub.
               </p>
               
@@ -194,7 +194,7 @@ function App() {
               </div>
 
               <div className="mt-12 text-gray-700">
-                Sayonara 👋
+                Sayonara <span className="wave" role="img" aria-label="waving-hand">👋</span>
               </div>
             </section>
 
@@ -295,6 +295,20 @@ function App() {
         .project-link:hover .project-title,
         .project-link:focus .project-title {
           color: #fff;
+        }
+        /* Waving hand animation */
+        @keyframes hand-wave {
+          0% { transform: rotate(0deg); }
+          15% { transform: rotate(14deg); }
+          30% { transform: rotate(-8deg); }
+          45% { transform: rotate(14deg); }
+          60% { transform: rotate(-4deg); }
+          100% { transform: rotate(0deg); }
+        }
+        .wave {
+          display: inline-block;
+          transform-origin: 70% 70%;
+          animation: hand-wave 2s ease-in-out infinite;
         }
       `}</style>
     </div>
