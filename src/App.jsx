@@ -83,7 +83,7 @@ function App() {
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black" style={{ fontFamily: 'ZalandoSansExpanded-SemiBold, Avenir, sans-serif' }}>Projects</h2>
               <p className="text-gray-700 mb-12 max-w-7xl">
                 Some of my recent projects which include React, Node.js, Python, Typescript 
-                and various modern web technologies.
+                and various modern web technologies. All links go to my GitHub.
               </p>
               
               <div className="grid md:grid-cols-2 gap-x-32 gap-y-8 max-w-7xl mx-auto">
@@ -98,16 +98,20 @@ function App() {
                 ].map((proj, i) => (
                   <a
                     key={proj.num}
-                    href="#"
-                    className="block border-b border-black pb-6 focus:outline-none"
+                    href="https://github.com/notsplol"
+                    className="block border-b border-black pb-6 focus:outline-none project-link"
                     tabIndex={0}
                   >
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center">
                       <div className={`w-12 h-12 ${proj.color} flex items-center justify-center`}>
                         <span className="text-white text-sm font-bold">{proj.num}</span>
                       </div>
-                      <div>
-                        <h3 className="text-xl font-medium text-black">
+                      <div className="project-title-container relative overflow-hidden">
+                        <div 
+                          className="project-overlay absolute left-0 top-0 bottom-0 w-0 transition-all duration-300 ease-out"
+                          style={{ backgroundColor: `var(--project-color-${i})` }}
+                        ></div>
+                        <h3 className="text-xl font-medium text-black project-title relative z-10 transition-colors duration-200 pl-4">
                           {proj.title}
                         </h3>
                       </div>
@@ -220,7 +224,7 @@ function App() {
         .animate-fade-in-slow {
           animation: fade-in-slow 1.2s ease-out forwards;
         }
-        /* Dancing emoji animation */
+        /* emoji animation */
         @keyframes dance-bounce {
           0% { transform: translateY(0) rotate(0deg); }
           25% { transform: translateY(-6px) rotate(-8deg); }
@@ -236,7 +240,7 @@ function App() {
           will-change: transform;
         }
         .dance-container { line-height: 0; }
-        /* Contacts hover overlay */
+        /* Contacts hover animation */
         .contact-link {
           position: relative;
           display: inline-block;
@@ -267,6 +271,29 @@ function App() {
         }
         .contact-link:hover .contact-text,
         .contact-link:focus .contact-text {
+          color: #fff;
+        }
+        /* Project hover animation */
+        .project-link {
+          --project-color-0: #1e40af; /* blue-800 */
+          --project-color-1: #6b21a8; /* purple-800 */
+          --project-color-2: #047857; /* emerald-700 */
+          --project-color-3: #b91c1c; /* red-700 */
+          --project-color-4: #d97706; /* amber-600 */
+          --project-color-5: #3730a3; /* indigo-800 */
+        }
+        .project-title-container {
+          height: 3rem; /* Same height as the number square (w-12 h-12) */
+          display: flex;
+          align-items: center;
+          flex: 1;
+        }
+        .project-link:hover .project-overlay,
+        .project-link:focus .project-overlay {
+          width: 100%;
+        }
+        .project-link:hover .project-title,
+        .project-link:focus .project-title {
           color: #fff;
         }
       `}</style>
