@@ -173,7 +173,7 @@ function App() {
                     <div className="border-b border-black pb-2">Java</div>
                     <div className="border-b border-black pb-2">JavaScript</div>
                     <div className="border-b border-black pb-2">TypeScript</div>
-                    <div className="pb-2">HTML/CSS</div>
+                    <div className="pb-2">HTML5/CSS3</div>
                   </div>
                 </div>
 
