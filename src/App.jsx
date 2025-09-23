@@ -73,7 +73,7 @@ function App() {
                   </>
                 ) : (
                   <>
-                    Bienvenue sur mon site web ! Je suis étudiant en Mathématiques et Informatique à l'Université McGill. J'ai développé des logiciels évolutifs pour des entreprises, travaillé avec de grandes bases de code établies et je vise à m'améliorer chaque jour.
+                    Bienvenue sur mon site web ! Je suis un étudiant de 3e année en Mathématiques et Informatique à l'Université McGill. J'ai développé des logiciels évolutifs pour des entreprises, travaillé avec de grandes bases de code établies et je vise à m'améliorer chaque jour.
                     Mes passions incluent les compilateurs, l'apprentissage automatique et la programmation fonctionnelle. En dehors du codage, j'aime le swing trading d'actions (sans succès), 
                     apprendre les mathématiques et faire du vélo.
                   </>
