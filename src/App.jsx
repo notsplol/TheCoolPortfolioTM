@@ -215,7 +215,7 @@ function App() {
             {/* Contacts Section */}
             <section>
               <h2 className="text-4xl md:text-5xl font-bold mb-10 text-black" style={{ fontFamily: 'ZalandoSansExpanded-SemiBold, Avenir, sans-serif' }}>
-                {isEnglish ? 'Contacts' : 'Contacts'}
+                {isEnglish ? 'Contacts' : 'Coordonnées'}
               </h2>
               
               <div className="space-y-3">
