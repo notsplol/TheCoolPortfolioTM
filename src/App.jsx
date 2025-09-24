@@ -117,7 +117,7 @@ function App() {
               </h2>
               <p className="text-gray-700 mb-12 max-w-7xl">
                 {isEnglish 
-                  ? 'Some of my recent projects which include React, Node.js, Python, Typescript, C and various modern web technologies. All links go to my GitHub.'
+                  ? 'Some of my recent projects which include React, Node.js, Python, Typescript, C and various modern web technologies. All links go to my GitHub. In the future, they will lead to a project page.'
                   : 'Quelques-uns de mes projets récents qui incluent React, Node.js, Python, Typescript, C et diverses technologies web modernes. Tous les liens mènent à mon GitHub.'
                 }
               </p>
