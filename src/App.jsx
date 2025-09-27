@@ -227,10 +227,10 @@ function App() {
                   <a href="https://github.com/notsplol" className="contact-link"><span className="contact-text">GitHub</span></a>
               <div className="absolute left-0 right-0 bottom-0 border-b border-black" style={{width: '150%'}}></div>
                 </div>
-                <div className="relative pb-2">
+                {/* <div className="relative pb-2">
                   <a href="https://www.linkedin.com/in/shivam-patel-244217353" className="contact-link"><span className="contact-text">LinkedIn</span></a>
               <div className="absolute left-0 right-0 bottom-0 border-b border-black" style={{width: '150%'}}></div>
-                </div>
+                </div> */}
               </div>
 
               <div className="mt-16 text-gray-700">
