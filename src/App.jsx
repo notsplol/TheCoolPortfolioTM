@@ -93,7 +93,7 @@ function App() {
               </h2>
               <div className="space-y-8">
                 <div className="relative pb-6">
-                  <div className="text-sm text-gray-600 mb-1">aug 2025 - now</div>
+                  <div className="text-sm text-gray-600 mb-1">{isEnglish ? 'aug 2025 - now' : 'août 2025 - présent'}</div>
                   <div className="text-lg">
                     <span className="font-semibold">{isEnglish ? 'Undergraduate Researcher' : 'Chercheur'}</span> @
                     <span className="underline decoration-2 underline-offset-2 ml-1 font-semibold">{isEnglish ? 'McGill University' : 'Université McGill'}</span>
@@ -101,7 +101,7 @@ function App() {
                     <div className="absolute left-0 right-0 bottom-0 border-b border-black" style={{width: '150%'}}></div>
                 </div>
                 <div className="pb-6">
-                  <div className="text-sm text-gray-600 mb-1">may 2025 - jul 2025</div>
+                  <div className="text-sm text-gray-600 mb-1">{isEnglish ? 'may 2025 - jul 2025' : 'mai 2025 - juil 2025'}</div>
                   <div className="text-lg">
                     <span className="font-semibold">{isEnglish ? 'Software Developer Intern' : 'Stagiaire Développeur Logiciel'}</span> @
                     <span className="underline decoration-2 underline-offset-2 ml-1 font-semibold">Patel Tax Services</span>
