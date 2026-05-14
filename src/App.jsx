@@ -93,7 +93,7 @@ function App() {
               </h2>
               <div className="space-y-8">
                 <div className="relative pb-6">
-                  <div className="text-sm text-gray-600 mb-1">{isEnglish ? 'aug 2025 - now' : 'août 2025 - présent'}</div>
+                  <div className="text-sm text-gray-600 mb-1">{isEnglish ? 'aug 2025 - jan 2026' : 'août 2025 - janvier 2026'}</div>
                   <div className="text-lg">
                     <span className="font-semibold">{isEnglish ? 'Undergraduate Researcher' : 'Chercheur'}</span> @
                     <span className="underline decoration-2 underline-offset-2 ml-1 font-semibold">{isEnglish ? 'McGill University' : 'Université McGill'}</span>
