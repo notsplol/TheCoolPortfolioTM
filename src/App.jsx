@@ -117,7 +117,7 @@ function App() {
               </h2>
               <p className="text-gray-700 mb-12 max-w-7xl">
                 {isEnglish 
-                  ? 'Some of my recent projects which include React, Node.js, Python, Typescript, C and various modern web technologies. All links go to my GitHub. In the future, they will lead to a project page.'
+                  ? 'Some of my recent projects which include React, Node.js, Python, Typescript, C and various modern web technologies. Some links go to GitHub, while others point to live products.'
                   : 'Quelques-uns de mes projets récents qui incluent React, Node.js, Python, Typescript, C et diverses technologies web modernes. Tous les liens mènent à mon GitHub.'
                 }
               </p>
@@ -128,13 +128,13 @@ function App() {
                   { color: 'bg-blue-800', num: '01', title: 'Ad Astra' },
                   { color: 'bg-purple-800', num: '02', title: 'Tax Management App' },
                   { color: 'bg-emerald-700', num: '03', title: 'Code Review CLI' },
-                  { color: 'bg-red-700', num: '04', title: 'Portfolio Website' },
+                  { color: 'bg-red-700', num: '04', title: 'Purson', href: 'https://purson.me' },
                   { color: 'bg-amber-600', num: '05', title: 'ETCA-GCC' },
                   { color: 'bg-indigo-800', num: '06', title: 'OS Simulation' },
                 ].map((proj, i) => (
                   <a
                     key={proj.num}
-                    href="https://github.com/notsplol"
+                    href={proj.href || 'https://github.com/notsplol'}
                     className="block border-b border-black pb-6 focus:outline-none project-link"
                     tabIndex={0}
                   >
